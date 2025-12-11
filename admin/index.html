@@ -3,29 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin</title>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; }
-  </style>
 </head>
 <body>
-  <h1>Loading CMS…</h1>
-
-  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-
   <script>
-    // Make sure the Identity widget is loaded
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
       window.netlifyIdentity.init();
     }
   </script>
